@@ -169,5 +169,16 @@
   }
 });
     </script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+         navigator.serviceWorker.register('./service_worker.js').then( () => {
+          console.log('Service Worker Registered')
+         })
+       })
+      } else {
+        console.log('Service Worker NOT Registered');
+      }
+      </script>
   </body>
 </html>
